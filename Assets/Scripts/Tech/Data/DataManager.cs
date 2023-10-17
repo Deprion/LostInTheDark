@@ -1,13 +1,9 @@
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
+using YG;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
-
-    private string path;
 
     public Data data { get; private set; }
 
@@ -15,71 +11,79 @@ public class DataManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-
-        path = Application.persistentDataPath + "/Data.dat";
-        LoadData();
     }
 
     public (bool, bool) GetLvl(int lvl)
     {
-        if (data.Levels.ContainsKey($"Level_{lvl}"))
-            return data.Levels[$"Level_{lvl}"];
-        return (false, false);
+        return (YandexGame.savesData.LvlComplete[lvl], YandexGame.savesData.LvlPerfect[lvl]);
     }
     public void SetLvl(int lvl, (bool, bool) values)
     {
-        data.Levels[$"Level_{lvl}"] = values;
+        YandexGame.savesData.LvlComplete[lvl] = values.Item1;
+        YandexGame.savesData.LvlPerfect[lvl] = values.Item2;
     }
     public void AddGem(int lvl)
     {
-        string str = $"Level_{lvl}";
-        if (!data.Gems.Contains(str)) data.Gems.Add(str);
+        bool newVal = true;
+        int index = 0;
+
+        for (int i = 0; i < YandexGame.savesData.Gems.Length; i++)
+        {
+            if (YandexGame.savesData.Gems[i] == lvl) newVal = false;
+            if (YandexGame.savesData.Gems[i] == 0)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        if (newVal) YandexGame.savesData.Gems[index] = lvl;
     }
 
     public void ResetProgress()
     {
-        data.Levels.Clear();
-        data.TotalDeaths = 0;
-        data.Gems.Clear();
-    }
-
-    private void LoadData()
-    {
-        if (!File.Exists(path))
-        {
-            data = new Data();
-            return;
-        }
-
-        data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(path));
-    }
-
-    private void SaveData()
-    {
-        File.WriteAllText(path, JsonConvert.SerializeObject(data));
+        YandexGame.ResetSaveProgress();
+        YandexGame.SaveProgress();
     }
 
     public class Data
     {
-        public Dictionary<string, (bool, bool)> Levels;
-        public int TotalDeaths;
-        public List<string> Gems;
-
-        public Data()
+        public int TotalDeaths 
+        { 
+            get 
+            {
+                return YandexGame.savesData.TotalDeaths;
+            }
+            set
+            {
+                YandexGame.savesData.TotalDeaths++;
+            }
+        }
+        public int Gems
         {
-            Levels = new Dictionary<string, (bool, bool)>(24);
-            TotalDeaths = 0;
-            Gems = new List<string>(4);
+            get 
+            {
+                int index = 0;
+
+                for (int i = 0; i < YandexGame.savesData.Gems.Length; i++)
+                {
+                    if (YandexGame.savesData.Gems[i] == 0)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+
+                return index;
+            }
         }
     }
 
     private void OnApplicationFocus(bool focus)
     {
-        if (!focus) SaveData();
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveData();
+        if (!focus)
+        {
+            YandexGame.SaveProgress();
+        }
     }
 }

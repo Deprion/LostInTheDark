@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,6 +12,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Sprite baseSprite, goldSprite;
 
     [SerializeField] private UIStats uiStats;
+
+    private void Awake()
+    {
+        if (Global.FirstLaunch)
+        {
+            YandexGame.GameReadyAPI();
+            Global.FirstLaunch = false;
+        }
+    }
 
     private void Start()
     {

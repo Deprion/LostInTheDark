@@ -15,6 +15,7 @@ public class AddressableLoader : MonoBehaviour
 
     private string key = "level";
     private AsyncOperationHandle<IList<GameObject>> handle;
+    private AsyncOperationHandle<IList<AudioClip>> musicHandle;
 
     private Dictionary<string, GameObject> levels = new Dictionary<string, GameObject>();
     private Dictionary<string, TextAsset> languages = new Dictionary<string, TextAsset>();
@@ -45,7 +46,7 @@ public class AddressableLoader : MonoBehaviour
             key,
             addressable => {} );
 
-        var musicHandle = Addressables.LoadAssetsAsync<AudioClip>(
+        musicHandle = Addressables.LoadAssetsAsync<AudioClip>(
             "music",
             addressable => { });
 
@@ -60,20 +61,25 @@ public class AddressableLoader : MonoBehaviour
             levels.Add(item.name, item);
         }
 
+        yield return langHandle;
+
+        foreach (var item in langHandle.Result)
+        {
+            languages.Add(item.name, item);
+        }
+
+        LanguageLoaded?.Invoke();
+
         yield return musicHandle;
 
         musicDone.Invoke(musicHandle.Result.ToArray());
 
-        yield return langHandle;
-
-        LanguageLoaded.Invoke();
-
         Addressables.Release(langHandle);
-        Addressables.Release(musicHandle);
     }
 
     private void OnDestroy()
     {
         Addressables.Release(handle);
+        Addressables.Release(musicHandle);
     }
 }

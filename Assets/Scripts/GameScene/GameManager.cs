@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     {
         inst = this;
 
+        Events.GameStarted.Invoke(true);
+
         LoadLevel(Global.Level);
 
         Events.LevelDeaths.Invoke(lvlDeaths);
@@ -28,7 +31,8 @@ public class GameManager : MonoBehaviour
 
         lvlDeaths++;
         Events.LevelDeaths.Invoke(lvlDeaths);
-        Events.TotalDeaths.Invoke(++DataManager.instance.data.TotalDeaths);
+        DataManager.instance.data.TotalDeaths++;
+        Events.TotalDeaths.Invoke(DataManager.instance.data.TotalDeaths);
 
         yield return new WaitForSeconds(1);
 
@@ -40,7 +44,8 @@ public class GameManager : MonoBehaviour
         {
             lvlDeaths++;
             Events.LevelDeaths.Invoke(lvlDeaths);
-            Events.TotalDeaths.Invoke(++DataManager.instance.data.TotalDeaths);
+            DataManager.instance.data.TotalDeaths++;
+            Events.TotalDeaths.Invoke(DataManager.instance.data.TotalDeaths);
         }
 
         StopAllCoroutines();
@@ -63,6 +68,8 @@ public class GameManager : MonoBehaviour
         lvlDeaths = 0;
         Events.LevelDeaths.Invoke(lvlDeaths);
 
+        YandexGame.SaveProgress();
+
         if (Global.Level - 1 >= AddressableLoader.inst.GetCount()) SceneManager.LoadScene("MenuScene");
         else LoadLevel(Global.Level);
     }
@@ -70,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void LoadLevel(int num)
     {
         if (level != null) Destroy(level);
+
+        YandexGame.FullscreenShow();
 
         level = Instantiate(AddressableLoader.inst.GetLevel(num));
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using YG;
 
 public class TranslateManager : MonoBehaviour
 {
@@ -21,11 +22,13 @@ public class TranslateManager : MonoBehaviour
 
     private void Setup()
     {
-        if (Application.systemLanguage == SystemLanguage.Russian)
+        string lang = YandexGame.EnvironmentData.language;
+
+        if (lang == "ru" || lang == "be" || lang == "kk" || lang == "uk" || lang == "uz")
             Fill(AddressableLoader.inst.GetLang("Russian"));
-        else if (Application.systemLanguage == SystemLanguage.Spanish)
+        else if (lang == "es")
             Fill(AddressableLoader.inst.GetLang("Spanish"));
-        else if (Application.systemLanguage == SystemLanguage.Turkish)
+        else if (lang == "tr")
             Fill(AddressableLoader.inst.GetLang("Turkish"));
         else
             Fill(AddressableLoader.inst.GetLang("English"));
