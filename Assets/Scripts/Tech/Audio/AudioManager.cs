@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     private int index = 0;
     private int prevIndex = 0;
 
-    private float leftTime = 0;
+    private float leftTime = 100;
 
     private void Awake()
     {
@@ -16,6 +16,13 @@ public class AudioManager : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         if (PlayerPrefs.GetInt("mute") == 1) Mute();
+
+        AddressableLoader.inst.musicDone.AddListener(InitMusic, true);
+    }
+
+    private void InitMusic(AudioClip[] clips)
+    {
+        this.clips = clips;
 
         StartNewAudio();
     }

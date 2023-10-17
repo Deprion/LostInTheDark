@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Music
+  m_EditorClassIdentifier: 
+  m_GroupName: Music
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cb3e54b5615bf074ca1e90017d57da5a
+  m_SerializeEntries:
+  - m_GUID: a0d0020567965ae44986b6351fb6616b
+    m_Address: Assets/Music/Sea-Of-Thoughts-with-Lucentia.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0866ebeb52cc1b34bb27167e83650cd4
+    m_Address: Assets/Music/Skogur.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9c1aa7bd45b6d043969f444e78e4526
+    m_Address: Assets/Music/Spatium-Calm-Ambient-Music.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44d73838a03acb74bbce1d021444043d
+    m_Address: Assets/Music/Otjanbird-Pt.-I.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - music
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 302d697deef75cd4e97567e1fd81cc4f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 38f33a3a847aa7349a3775bb743d4a8f, type: 2}
+    - {fileID: 11400000, guid: e9a0500e83545ac47b031267126062c0, type: 2}
