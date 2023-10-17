@@ -6,7 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Transform parent;
     [SerializeField] private GameObject lvlPrefab;
-    [SerializeField] private Button playBtn, quitBtn, resetBtn, soundBtn;
+    [SerializeField] private Button playBtn, resetBtn, soundBtn;
 
     [SerializeField] private Sprite baseSprite, goldSprite;
 
@@ -16,7 +16,6 @@ public class MenuManager : MonoBehaviour
     {
         AudioManager audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        quitBtn.onClick.AddListener(() => Application.Quit());
         soundBtn.onClick.AddListener(audio.Mute);
 
         playBtn.onClick.AddListener(delegate 
@@ -96,7 +95,6 @@ public class MenuManager : MonoBehaviour
     private void OnDestroy()
     {
         playBtn.onClick.RemoveAllListeners();
-        quitBtn.onClick.RemoveAllListeners();
         resetBtn.onClick.RemoveAllListeners();
         soundBtn.onClick.RemoveAllListeners();
     }

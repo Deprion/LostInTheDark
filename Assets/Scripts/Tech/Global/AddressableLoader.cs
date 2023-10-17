@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,13 @@ public class AddressableLoader : MonoBehaviour
     public static AddressableLoader inst { get; private set; }
 
     public SimpleEvent<AudioClip[]> musicDone = new SimpleEvent<AudioClip[]>();
+    public Action LanguageLoaded;
 
     private string key = "level";
     private AsyncOperationHandle<IList<GameObject>> handle;
 
     private Dictionary<string, GameObject> levels = new Dictionary<string, GameObject>();
-    public List<AudioClip> music = new List<AudioClip>(4);
+    private Dictionary<string, TextAsset> languages = new Dictionary<string, TextAsset>();
 
     public GameObject GetLevel(int num)
     {
@@ -24,6 +26,11 @@ public class AddressableLoader : MonoBehaviour
     public int GetCount()
     {
         return levels.Count;
+    }
+
+    public TextAsset GetLang(string lang)
+    {
+        return languages[lang];
     }
 
     private void Awake()
@@ -42,6 +49,10 @@ public class AddressableLoader : MonoBehaviour
             "music",
             addressable => { });
 
+        var langHandle = Addressables.LoadAssetsAsync<TextAsset>(
+            "lang",
+            addressable => { });
+
         yield return handle;
 
         foreach (var item in handle.Result)
@@ -53,6 +64,11 @@ public class AddressableLoader : MonoBehaviour
 
         musicDone.Invoke(musicHandle.Result.ToArray());
 
+        yield return langHandle;
+
+        LanguageLoaded.Invoke();
+
+        Addressables.Release(langHandle);
         Addressables.Release(musicHandle);
     }
 

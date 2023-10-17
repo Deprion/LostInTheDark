@@ -1,0 +1,20 @@
+tutorialhint:Escape - leave to menu.
+R - restart level.;
+reset:RESET?;
+resetinfo:Level progression and total deaths will be lost. Gems will remain;
+resetbtn:Reset;
+totaldeaths:Total Deaths;
+gems:Gems;
+leveldeaths:Level Deaths;
+crystals:Crystals;
+firsthint:It is necessary to collect crystals to open the exit;
+secondhint:Spikes kill when touched;
+thirdhint:Moving spikes are dangerous and maneuverable;
+fourthhint:This place is a madness. Awfully painful place.;
+fifthhint:Plates deactivates some spikes for a short time;
+sixthhint:Looks like here is no end. Endless torment.;
+seventhhint:Red floor spawn spikes for a short time;
+eighthint:I will seek for salvation in this void. Luck in my side - i am still alive.;
+ninehint:Be aware of smart spikes. They can rush to you;
+tenhint:Whatever it takes - i will be free. Never give up.
+Do or die.;

@@ -12,8 +12,8 @@ public class UIStats : MonoBehaviour
 
     public void UpdateText()
     { 
-        deathsTxt.text = $"Total Deaths: {DataManager.instance.data.TotalDeaths}";
+        deathsTxt.text = $"{TranslateManager.inst.GetText("totaldeaths")}: {DataManager.instance.data.TotalDeaths}";
         gemsTxt.text = 
-            $"{DataManager.instance.data.Gems.Count}/{DataManager.instance.data.Gems.Capacity} Gems";
+            $"{DataManager.instance.data.Gems.Count}/{DataManager.instance.data.Gems.Capacity} {TranslateManager.inst.GetText("gems")}";
     }
 }

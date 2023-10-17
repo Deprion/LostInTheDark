@@ -2690,6 +2690,7 @@ GameObject:
   - component: {fileID: 8143677987221420847}
   - component: {fileID: 250692163897358779}
   - component: {fileID: 3564776804123782622}
+  - component: {fileID: 1429836481920812672}
   m_Layer: 0
   m_Name: HintTxt
   m_TagString: Untagged
@@ -2852,6 +2853,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 250692163897358779}
   m_maskType: 0
+--- !u!114 &1429836481920812672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224239923851354404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15e3065c6b3aed47844274c926ddb1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: tenhint
 --- !u!1 &1801175571664093356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,7 +4909,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d1d879b681559d54f94ae9a093cc42be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

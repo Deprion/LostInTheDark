@@ -12,9 +12,9 @@ public class InfoUI : MonoBehaviour
         Events.CrystalCollected.AddListener(UpdateCrystals, true);
     }
 
-    private void UpdateLvlDeaths(int amount) => lvlDeaths.text = $"Level Deaths {amount}";
-    private void UpdateTotalDeaths(int amount) => totalDeaths.text = $"Total Deaths {amount}";
-    private void UpdateCrystals(int cur, int max) => crystalTxt.text = $"Crystals {cur}/{max}";
+    private void UpdateLvlDeaths(int amount) => lvlDeaths.text = $"{TranslateManager.inst.GetText("leveldeaths")} {amount}";
+    private void UpdateTotalDeaths(int amount) => totalDeaths.text = $"{TranslateManager.inst.GetText("totaldeaths")} {amount}";
+    private void UpdateCrystals(int cur, int max) => crystalTxt.text = $"{TranslateManager.inst.GetText("crystals")} {cur}/{max}";
 
     private void OnDestroy()
     {

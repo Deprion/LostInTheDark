@@ -1,0 +1,20 @@
+﻿tutorialhint:Kaçış - menüye git.
+R - yeniden başlatma seviyesi.;
+reset:Sıfırla?;
+resetinfo:Seviye ilerlemesi ve toplam ölümler kaybolacaktır. Taşlar kalacak;
+resetbtn:Sıfırla;
+totaldeaths:Toplam Ölümler;
+gems:Taşlar;
+leveldeaths:Seviye Ölümleri;
+crystals:Kristaller;
+firsthint:Çıkışı açmak için kristalleri toplamak gerekiyor;
+secondhint:Sivri dokunulduğunda öldürür;
+thirdhint:Hareketli sivri uçlar tehlikeli ve manevra kabiliyetine sahiptir;
+fourthhint:Burası tam bir çılgınlık. Çok acı verici bir yer.;
+fifthhint:Plakalar bazı sivri uçları kısa bir süre için devre dışı bırakır;
+sixthhint:Sonu yok gibi görünüyor. Sonsuz azap.;
+seventhhint:Kırmızı zemin kısa bir süre için sivri uçlar üretir;
+eighthint:Bu boşlukta kurtuluş arayacağım. Benim tarafımda şans - hala hayattayım.;
+ninehint:Akıllı sivri uçların farkında olun. Sana acele edebilirler;
+tenhint:Ne gerekiyorsa - özgür olacağım. Asla pes Etme.
+Yap ya da öl.;

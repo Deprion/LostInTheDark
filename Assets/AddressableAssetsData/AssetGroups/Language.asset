@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Language
+  m_EditorClassIdentifier: 
+  m_GroupName: Language
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d743e30f634be754995527b65c9e61ba
+  m_SerializeEntries:
+  - m_GUID: 0b489ac569cfe4143986b6aed83b5ceb
+    m_Address: Assets/Scripts/Tech/Translate/Spanish.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - lang
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b0f58be7d642644b806e4e2efa79d91
+    m_Address: Assets/Scripts/Tech/Translate/Russian.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - lang
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1df8de8a5b07e194392c18a7a31d41d0
+    m_Address: Assets/Scripts/Tech/Translate/English.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - lang
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6d6f1dd301c9914a8352e7919524f33
+    m_Address: Assets/Scripts/Tech/Translate/Turkish.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - lang
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 302d697deef75cd4e97567e1fd81cc4f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 79531b736861c784880e43bfaa80eb73, type: 2}
+    - {fileID: 11400000, guid: efe4339214cc6b7499d403d3a5a4d833, type: 2}
