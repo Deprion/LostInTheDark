@@ -1,7 +1,7 @@
-tutorialhint:Escape - ir al menú.
+tutorialhint:Escape - ir al menu.
 R - nivel de reinicio.;
 reset:Restablecer?;
-resetinfo:La progresión de nivel y el total de muertes se perderán. Las gemas permanecerán;
+resetinfo:La progresion de nivel y el total de muertes se perderan. Las gemas permaneceran;
 resetbtn:Restablecer;
 totaldeaths:Total de Muertes;
 gems:Gemas;
@@ -9,12 +9,12 @@ leveldeaths:Muertes de Nivel;
 crystals:Cristales;
 firsthint:Es necesario recoger cristales para abrir la salida;
 secondhint:Los picos matan cuando se tocan;
-thirdhint:Los picos móviles son peligrosos y maniobrables;
+thirdhint:Los picos moviles son peligrosos y maniobrables;
 fourthhint:Este lugar es una locura. Un lugar terriblemente doloroso.;
 fifthhint:Placas desactiva algunos picos por un corto tiempo;
 sixthhint:Parece que no hay fin. Tormento sin fin.;
 seventhhint:Picos rojos de desove en el suelo por un corto tiempo;
-eighthint:Buscaré la salvación en este vacío. La suerte está de mi lado, todavía estoy vivo.;
-ninehint:Esté atento a los picos inteligentes. Pueden correr hacia ti;
-tenhint:Cueste lo que cueste, seré libre. Nunca te rindas.
+eighthint:Buscare la salvación en este vacio. La suerte esta de mi lado, todavia estoy vivo.;
+ninehint:Este atento a los picos inteligentes. Pueden correr hacia ti;
+tenhint:Cueste lo que cueste, sere libre. Nunca te rindas.
 Hacer o morir.;
