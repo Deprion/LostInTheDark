@@ -78,8 +78,6 @@ public class GameManager : MonoBehaviour
     {
         if (level != null) Destroy(level);
 
-        YandexGame.FullscreenShow();
-
         level = Instantiate(AddressableLoader.inst.GetLevel(num));
 
         isDead = false;
